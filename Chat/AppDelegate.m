@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self SVProgressHUDConfigure];
+    [self setupUI];
     return YES;
 }
 
@@ -47,5 +49,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Private
+
+- (void)SVProgressHUDConfigure
+{
+    [SVProgressHUD setBackgroundColor:[UIColor colorWithRed: 0.275 green: 0.282 blue: 0.282 alpha: 0.9]];
+    [SVProgressHUD setFont:[UIFont systemFontOfSize:14]];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD setMinimumDismissTimeInterval:1.0];
+}
+
+- (void)setupUI
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed: 0.0196 green: 0.365 blue: 0.706 alpha: 1]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+}
 
 @end

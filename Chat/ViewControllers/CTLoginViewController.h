@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CTLoginViewController.h
 //  Chat
 //
 //  Created by Kevin on 2016/11/3.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CTLoginViewController : UIViewController
 
 @end
-
