@@ -9,11 +9,13 @@
 #import "CTFriendsListViewController.h"
 #import "CTFriendsListTableViewCell.h"
 #import "CTXMPPManager.h"
+#import "CTChatDetailViewController.h"
 
 @interface CTFriendsListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *friendsList;
+@property (strong, nonatomic) XMPPJID *selectedJID;
 
 @end
 
@@ -23,6 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableView.tableFooterView = [[UIView alloc] init];
+    self.tableView.allowsMultipleSelectionDuringEditing = YES;
     self.friendsList = [NSMutableArray array];
     
     [[[CTXMPPManager sharedInstance] xmppRoster] fetchRoster];
@@ -73,6 +76,23 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    XMPPUserMemoryStorageObject *user = self.friendsList[indexPath.row];
+    self.selectedJID = user.jid;
+    [self performSegueWithIdentifier:@"ChatDetailSegue" sender:nil];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"delete");
+        XMPPUserMemoryStorageObject *user = self.friendsList[indexPath.row];
+        [[CTXMPPManager sharedInstance] removeBuddyWithName:user.jid.user];
+    }
 }
 
 #pragma mark - Private
@@ -97,6 +117,14 @@
     [alertController addAction:okAction];
     [alertController addAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ChatDetailSegue"]) {
+        CTChatDetailViewController *vc = segue.destinationViewController;
+        vc.jid = self.selectedJID;
+    }
 }
 
 @end

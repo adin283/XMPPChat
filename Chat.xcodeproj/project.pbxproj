@@ -10,6 +10,9 @@
 		4A0B5D195E806DEA4F3A68F6 /* Pods_ChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2148BA2E1F2B68FA354A0ECF /* Pods_ChatUITests.framework */; };
 		6B572F1EFE7C32F7F9782ECC /* Pods_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3557B3FCA052A8F9F10E01 /* Pods_ChatTests.framework */; };
 		C1C69861579D567726342F77 /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F31DAB1870F4496E0C452D0 /* Pods_Chat.framework */; };
+		DF241F571DD30A78002BAEAE /* CTChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF241F561DD30A78002BAEAE /* CTChatDetailViewController.m */; };
+		DF241F5D1DD30B3C002BAEAE /* CTChatDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF241F5C1DD30B3C002BAEAE /* CTChatDetailTableViewCell.m */; };
+		DF241F601DD316E7002BAEAE /* CTChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF241F5F1DD316E7002BAEAE /* CTChatModel.m */; };
 		DF32B7F21DCAD89100918AA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32B7F11DCAD89100918AA4 /* main.m */; };
 		DF32B7F51DCAD89100918AA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32B7F41DCAD89100918AA4 /* AppDelegate.m */; };
 		DF32B7FB1DCAD89100918AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF32B7F91DCAD89100918AA4 /* Main.storyboard */; };
@@ -50,6 +53,12 @@
 		6C3D171F2C39A701D45F5D8F /* Pods-ChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatTests/Pods-ChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A8641925748AF6092275BB1 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		C60ED7555246A14453482EEA /* Pods-ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatUITests/Pods-ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF241F551DD30A78002BAEAE /* CTChatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTChatDetailViewController.h; sourceTree = "<group>"; };
+		DF241F561DD30A78002BAEAE /* CTChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTChatDetailViewController.m; sourceTree = "<group>"; };
+		DF241F5B1DD30B3C002BAEAE /* CTChatDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTChatDetailTableViewCell.h; path = Chat/TableCells/CTChatDetailTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		DF241F5C1DD30B3C002BAEAE /* CTChatDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTChatDetailTableViewCell.m; path = Chat/TableCells/CTChatDetailTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		DF241F5E1DD316E7002BAEAE /* CTChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTChatModel.h; sourceTree = "<group>"; };
+		DF241F5F1DD316E7002BAEAE /* CTChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTChatModel.m; sourceTree = "<group>"; };
 		DF32B7ED1DCAD89100918AA4 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF32B7F11DCAD89100918AA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF32B7F31DCAD89100918AA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -199,6 +208,8 @@
 				DF3DA8DA1DCB17AF007C339E /* CTLoginViewController.m */,
 				DF6D73E01DCC7DC0002181C5 /* CTFriendsListViewController.h */,
 				DF6D73E11DCC7DC0002181C5 /* CTFriendsListViewController.m */,
+				DF241F551DD30A78002BAEAE /* CTChatDetailViewController.h */,
+				DF241F561DD30A78002BAEAE /* CTChatDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +219,8 @@
 			children = (
 				DF3DA8DE1DCB195B007C339E /* CTXMPPManager.h */,
 				DF3DA8DF1DCB195B007C339E /* CTXMPPManager.m */,
+				DF241F5E1DD316E7002BAEAE /* CTChatModel.h */,
+				DF241F5F1DD316E7002BAEAE /* CTChatModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +230,8 @@
 			children = (
 				DF6D73E31DCC8D79002181C5 /* CTFriendsListTableViewCell.h */,
 				DF6D73E41DCC8D79002181C5 /* CTFriendsListTableViewCell.m */,
+				DF241F5B1DD30B3C002BAEAE /* CTChatDetailTableViewCell.h */,
+				DF241F5C1DD30B3C002BAEAE /* CTChatDetailTableViewCell.m */,
 			);
 			name = TableViewCells;
 			path = ViewControllers;
@@ -493,8 +508,11 @@
 				DF32B7F51DCAD89100918AA4 /* AppDelegate.m in Sources */,
 				DF6D73E21DCC7DC0002181C5 /* CTFriendsListViewController.m in Sources */,
 				DF3DA8E01DCB195B007C339E /* CTXMPPManager.m in Sources */,
+				DF241F5D1DD30B3C002BAEAE /* CTChatDetailTableViewCell.m in Sources */,
 				DF3DA8DC1DCB17AF007C339E /* CTLoginViewController.m in Sources */,
 				DF6D73E51DCC8D79002181C5 /* CTFriendsListTableViewCell.m in Sources */,
+				DF241F571DD30A78002BAEAE /* CTChatDetailViewController.m in Sources */,
+				DF241F601DD316E7002BAEAE /* CTChatModel.m in Sources */,
 				DF32B7F21DCAD89100918AA4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

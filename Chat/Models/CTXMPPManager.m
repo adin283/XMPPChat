@@ -143,7 +143,7 @@ NSString * const CTXMPPManagerLoginSuccessNotificationName = @"CTXMPPManagerLogi
 
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
 {
-    NSLog(@"%s", __func__);
+    NSLog(@"%s - %@", __func__, error);
 }
 
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
@@ -169,11 +169,18 @@ NSString * const CTXMPPManagerLoginSuccessNotificationName = @"CTXMPPManagerLogi
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
 {
     NSLog(@"%s - %@", __func__, message);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DidReceiveNewMessage"
+                                                        object:self
+                                                      userInfo:nil];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message
 {
     NSLog(@"%s - %@", __FUNCTION__, message);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DidSendNewMessage"
+                                                        object:self
+                                                      userInfo:nil];
+    
 }
 
 - (void)xmppStream:(XMPPStream *)sender didFailToSendMessage:(XMPPMessage *)message error:(NSError *)error
